@@ -1,0 +1,10 @@
+Dataset attribution
+-------------------
+The Breast Cancer Wisconsin (Diagnostic) dataset is maintained by the UCI
+Machine Learning Repository. UCI identifies the dataset license as Creative
+Commons Attribution 4.0 International (CC BY 4.0) and provides DOI 10.24432/C5DW2B.
+Please retain attribution to the original dataset authors and UCI when reusing
+or redistributing the included CSV.
+
+Original dataset page:
+https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic

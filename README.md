@@ -1,5 +1,3 @@
-# Breast-Cancer-Detection-ML
-Classification of breast cancer tumors using 7 machine learning algorithms (WDBC dataset).
 # پروژه تشخیص تومور پستان با یادگیری ماشین (WDBC)
 
 این مخزن پیاده‌سازی هفت الگوریتم اسلاید ۱۷۸ برای طبقه‌بندی تومور به دو کلاس **بدخیم (Malignant)** و **خوش‌خیم (Benign)** را ارائه می‌کند:
@@ -45,3 +43,43 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python src/train_models.py
 python src/build_report.py
+```
+
+خروجی‌ها در مسیرهای زیر ساخته می‌شوند:
+
+- `results/figures/`: هفت نمودار شش‌خطی حساسیت پارامتر، نمودار مقایسهٔ آزمون، منحنی ROC و ماتریس‌های اغتشاش
+- `results/tables/`: نتایج اعتبارسنجی، مقایسهٔ مدل‌ها و پیش‌بینی‌های آزمون
+- `results/run_metadata.json`: تنظیمات آزمایش
+- `models/`: مدل‌های آموزش‌دیدهٔ نهایی و فایل تجمیعی مدل‌ها
+
+گزارش نهایی Word: `گزارش_پروژه_تشخیص_سرطان_سینه.docx`
+
+## معنی شش خط نمودارها
+
+در هر نمودار، شش خط عبارت‌اند از Accuracy، Precision، Sensitivity/Recall، F1-score، Specificity و ROC-AUC. هر نقطه میانگین همان معیار در ۵ fold اعتبارسنجی است. نمودارها برای مشاهدهٔ حساسیت مدل به پارامتر اصلی هستند، نه برای گزارش عملکرد نهایی روی آزمون.
+
+## ساختار مخزن
+
+```text
+.
+├── data/wdbc_dataset.csv
+├── models/
+├── results/
+│   ├── figures/
+│   ├── tables/
+│   └── run_metadata.json
+├── src/train_models.py
+├── requirements.txt
+├── run.sh
+└── گزارش_پروژه_تشخیص_سرطان_سینه.docx
+```
+
+## منابع
+
+- UCI Machine Learning Repository, Breast Cancer Wisconsin (Diagnostic), DOI: `10.24432/C5DW2B`.
+- مستندات scikit-learn، تابع `load_breast_cancer` و API الگوریتم‌های طبقه‌بندی.
+- W. Street, W. Wolberg, O. Mangasarian (1993), *Nuclear feature extraction for breast tumor diagnosis*.
+
+## بازتولیدپذیری
+
+بذر تصادفی ۴۲، تقسیم stratified و foldهای پنج‌گانه ثابت شده‌اند. به دلیل تفاوت نسخهٔ کتابخانه‌ها و سخت‌افزار، زمان اجرا ممکن است متفاوت باشد؛ تغییر کوچک در خروجی ANN یا Random Forest نیز ممکن است با تغییر نسخهٔ کتابخانه رخ دهد.

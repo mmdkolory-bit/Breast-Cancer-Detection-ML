@@ -1,0 +1,29 @@
+{
+  "dataset": "Wisconsin Breast Cancer Diagnostic (WDBC), scikit-learn bundled copy",
+  "samples": 569,
+  "original_features": 30,
+  "selected_features": 20,
+  "positive_class": "Malignant",
+  "negative_class": "Benign",
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratified": true
+  },
+  "cross_validation": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "selection_rule": "Highest mean CV sensitivity; ties broken by F1 then ROC-AUC",
+  "algorithms": [
+    "Naive Bayes",
+    "KNN",
+    "Decision Tree",
+    "Random Forest",
+    "SVM",
+    "Logistic Regression",
+    "ANN"
+  ]
+}
